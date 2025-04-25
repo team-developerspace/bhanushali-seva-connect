@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -139,8 +138,7 @@ const Index = () => {
                 asChild 
                 size="lg" 
                 variant="outline" 
-                className="border-white text-white hover:bg-white/20"
-                style={{ visibility: 'visible' }} // Ensure button is visible
+                className="border-bhanushali-orange text-bhanushali-orange hover:bg-bhanushali-orange/10"
               >
                 <Link to="/donate">
                   {currentLanguage === 'en' ? 'Donate Now' : 'હવે દાન કરો'}
