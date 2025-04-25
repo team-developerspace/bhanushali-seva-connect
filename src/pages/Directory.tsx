@@ -36,9 +36,9 @@ interface DirectoryMember {
 const Directory = () => {
   const [currentLanguage, setCurrentLanguage] = useState<'en' | 'gu'>('en');
   const [searchTerm, setSearchTerm] = useState('');
-  const [locationFilter, setLocationFilter] = useState('');
-  const [villageFilter, setVillageFilter] = useState('');
-  const [casteFilter, setCasteFilter] = useState('');
+  const [locationFilter, setLocationFilter] = useState('all-locations');
+  const [villageFilter, setVillageFilter] = useState('all-villages');
+  const [casteFilter, setCasteFilter] = useState('all-castes');
   const [isAuthorized, setIsAuthorized] = useState(true); // For demo, set to true to show directory
 
   // Mock data - in a real app, this would come from an API
@@ -62,18 +62,18 @@ const Directory = () => {
   const filteredMembers = members.filter(member => {
     return (
       member.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      (locationFilter === '' || member.location === locationFilter) &&
-      (villageFilter === '' || member.village === villageFilter) &&
-      (casteFilter === '' || member.caste === casteFilter)
+      (locationFilter === 'all-locations' || member.location === locationFilter) &&
+      (villageFilter === 'all-villages' || member.village === villageFilter) &&
+      (casteFilter === 'all-castes' || member.caste === casteFilter)
     );
   });
 
   // Reset all filters
   const resetFilters = () => {
     setSearchTerm('');
-    setLocationFilter('');
-    setVillageFilter('');
-    setCasteFilter('');
+    setLocationFilter('all-locations');
+    setVillageFilter('all-villages');
+    setCasteFilter('all-castes');
   };
 
   return (
@@ -136,7 +136,7 @@ const Directory = () => {
                         <SelectValue placeholder={currentLanguage === 'en' ? 'All Locations' : 'બધા સ્થાનો'} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">
+                        <SelectItem value="all-locations">
                           {currentLanguage === 'en' ? 'All Locations' : 'બધા સ્થાનો'}
                         </SelectItem>
                         {locations.map((location) => (
@@ -157,7 +157,7 @@ const Directory = () => {
                         <SelectValue placeholder={currentLanguage === 'en' ? 'All Villages' : 'બધા ગામો'} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">
+                        <SelectItem value="all-villages">
                           {currentLanguage === 'en' ? 'All Villages' : 'બધા ગામો'}
                         </SelectItem>
                         {villages.map((village) => (
@@ -178,7 +178,7 @@ const Directory = () => {
                         <SelectValue placeholder={currentLanguage === 'en' ? 'All Castes' : 'બધી જાતિઓ'} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">
+                        <SelectItem value="all-castes">
                           {currentLanguage === 'en' ? 'All Castes' : 'બધી જાતિઓ'}
                         </SelectItem>
                         {castes.map((caste) => (
