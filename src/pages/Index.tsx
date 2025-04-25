@@ -6,11 +6,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Advertisement from '@/components/Advertisement';
 import { User, Users, Bus, Calendar, FileText, Hospital, ShoppingBag, CalendarHeart } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
-import { loadImage, removeBackground } from '@/utils/imageUtils';
 
 const Index = () => {
   const [currentLanguage, setCurrentLanguage] = useState<'en' | 'gu'>('en');
-  const [logoUrl, setLogoUrl] = useState('/lovable-uploads/ee52775c-946f-4d30-a707-d59f099fa99b.png');
+  const [logoUrl] = useState('/lovable-uploads/ee52775c-946f-4d30-a707-d59f099fa99b.png');
 
   useEffect(() => {
     const processLogo = async () => {
@@ -156,7 +155,7 @@ const Index = () => {
                 asChild 
                 size="lg" 
                 variant="outline" 
-                className="border-bhanushali-orange text-bhanushali-orange hover:bg-bhanushali-orange/10"
+                className="border-white text-white hover:bg-white/20"
               >
                 <Link to="/donate">
                   {currentLanguage === 'en' ? 'Donate Now' : 'હવે દાન કરો'}
@@ -165,11 +164,11 @@ const Index = () => {
             </div>
           </div>
           <div className="md:w-1/3 mt-8 md:mt-0">
-            <div className="bg-transparent rounded-full w-64 h-64 flex items-center justify-center">
+            <div className="bg-white rounded-full w-64 h-64 flex items-center justify-center p-6">
               <img 
                 src={logoUrl} 
                 alt="Shree Kutchi Bhanushali Seva Samaj Trust Logo" 
-                className="w-48 h-48 object-contain drop-shadow-xl"
+                className="w-full h-full object-contain"
               />
             </div>
           </div>
