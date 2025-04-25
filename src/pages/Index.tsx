@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,9 +6,27 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Advertisement from '@/components/Advertisement';
 import { User, Users, Bus, Calendar, FileText, Hospital, ShoppingBag, CalendarHeart } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
+import { loadImage, removeBackground } from '@/utils/imageUtils';
 
 const Index = () => {
   const [currentLanguage, setCurrentLanguage] = useState<'en' | 'gu'>('en');
+  const [logoUrl, setLogoUrl] = useState('/lovable-uploads/ee52775c-946f-4d30-a707-d59f099fa99b.png');
+
+  useEffect(() => {
+    const processLogo = async () => {
+      try {
+        const response = await fetch(logoUrl);
+        const blob = await response.blob();
+        const image = await loadImage(blob);
+        const processedLogoBlob = await removeBackground(image);
+        setLogoUrl(URL.createObjectURL(processedLogoBlob));
+      } catch (error) {
+        console.error('Error processing logo:', error);
+      }
+    };
+
+    processLogo();
+  }, []);
 
   const featureCards = [
     { 
@@ -78,7 +96,7 @@ const Index = () => {
       dateEn: 'June 8, 2024',
       dateGu: '8 જૂન, 2024',
       locationEn: 'Knowledge Center',
-      locationGu: 'નોલેજ સેન્ટર',
+      locationGu: 'નોલેજ ��ેન્ટર',
     },
     {
       id: 3,
@@ -147,9 +165,9 @@ const Index = () => {
             </div>
           </div>
           <div className="md:w-1/3 mt-8 md:mt-0">
-            <div className="bg-white rounded-full w-64 h-64 flex items-center justify-center shadow-lg">
+            <div className="bg-transparent rounded-full w-64 h-64 flex items-center justify-center">
               <img 
-                src="/lovable-uploads/ee52775c-946f-4d30-a707-d59f099fa99b.png" 
+                src={logoUrl} 
                 alt="Shree Kutchi Bhanushali Seva Samaj Trust Logo" 
                 className="w-48 h-48 object-contain drop-shadow-xl"
               />
