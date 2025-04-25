@@ -135,7 +135,13 @@ const Index = () => {
                   {currentLanguage === 'en' ? 'Community Directory' : 'સમુદાય ડિરેક્ટરી'}
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
+              <Button 
+                asChild 
+                size="lg" 
+                variant="outline" 
+                className="border-white text-white hover:bg-white/20"
+                style={{ visibility: 'visible' }} // Ensure button is visible
+              >
                 <Link to="/donate">
                   {currentLanguage === 'en' ? 'Donate Now' : 'હવે દાન કરો'}
                 </Link>
@@ -143,11 +149,13 @@ const Index = () => {
             </div>
           </div>
           <div className="md:w-1/3 mt-8 md:mt-0">
-            <img 
-              src="/lovable-uploads/ee52775c-946f-4d30-a707-d59f099fa99b.png" 
-              alt="Shree Kutchi Bhanushali Seva Samaj Trust Logo" 
-              className="w-64 h-64 mx-auto object-contain drop-shadow-xl"
-            />
+            <div className="bg-white rounded-full w-64 h-64 flex items-center justify-center shadow-lg">
+              <img 
+                src="/lovable-uploads/ee52775c-946f-4d30-a707-d59f099fa99b.png" 
+                alt="Shree Kutchi Bhanushali Seva Samaj Trust Logo" 
+                className="w-48 h-48 object-contain drop-shadow-xl"
+              />
+            </div>
           </div>
         </div>
       </section>
