@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom colors based on the logo
+				bhanushali: {
+					orange: '#F97316',
+					yellow: '#FEC124',
+					lightOrange: '#FEC6A1',
+					lightYellow: '#FEF7CD',
+					red: '#EF4444',
+					green: '#10B981',
+					purple: '#9b87f5'
 				}
 			},
 			borderRadius: {
@@ -89,6 +100,9 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			fontFamily: {
+				gujarati: ['Noto Sans Gujarati', 'sans-serif'],
 			}
 		}
 	},
