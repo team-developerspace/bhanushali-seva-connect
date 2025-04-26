@@ -18,7 +18,7 @@ const Header = ({ currentLanguage, setLanguage }: HeaderProps) => {
       <div className="container mx-auto flex items-center justify-between p-4">
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center gap-2">
-            <img src="/lovable-uploads/347389d3-9857-45e7-aa9f-69745bff874d.png" alt="Logo" className="h-12" />
+            <img src="/lovable-uploads/26a16dd6-1e03-47e9-b43a-787d5ef976e7.png" alt="Logo" className="h-12" />
             <h1 className="font-bold text-lg hidden md:block">
               {currentLanguage === 'en' ? 'Shree Navi Mumbai Bhanushali Charitable Trust' : 'શ્રી નવી મુંબઈ ભાનુશાલી ચેરિટેબલ ટ્રસ્ટ'}
             </h1>

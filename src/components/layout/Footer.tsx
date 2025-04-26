@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -17,8 +16,8 @@ const Footer = ({ currentLanguage }: FooterProps) => {
             </h3>
             <p className="mb-4">
               {currentLanguage === 'en' 
-                ? 'Shree Kutchi Bhanushali Seva Samaj Trust is dedicated to serving our community through unity, support, and cultural preservation.' 
-                : 'શ્રી કચ્છી ભાનુશાલી સેવા સમાજ ટ્રસ્ટ એકતા, સહાય અને સાંસ્કૃતિક સંરક્ષણ દ્વારા અમારા સમુદાયની સેવા માટે સમર્પિત છે.'}
+                ? 'Shree Navi Mumbai Bhanushali Charitable Trust is dedicated to serving our community through unity, support, and cultural preservation.' 
+                : 'શ્રી નવી મુંબઈ ભાનુશાલી ચેરિટેબલ ટ્રસ્ટ એકતા, સહાય અને સાંસ્કૃતિક સંરક્ષણ દ્વારા અમારા સમુદાયની સેવા માટે સમર્પિત છે.'}
             </p>
             <Link to="/donate" className="text-white underline hover:text-white/80">
               {currentLanguage === 'en' ? 'Donate Now' : 'હવે દાન કરો'}
@@ -46,7 +45,8 @@ const Footer = ({ currentLanguage }: FooterProps) => {
               </li>
               <li>
                 <Link to="/health" className="text-white hover:text-white/80">
-                  {currentLanguage === 'en' ? 'Health & Insurance' : 'આરોગ્ય અને વીમા'}
+                  {currentLanguage === 'en' 
+                    ? 'Health & Insurance' : 'આરોગ્ય અને વીમા'}
                 </Link>
               </li>
             </ul>
@@ -73,8 +73,8 @@ const Footer = ({ currentLanguage }: FooterProps) => {
         <div className="border-t border-white/20 mt-8 pt-8 text-center">
           <p>
             {currentLanguage === 'en' 
-              ? '© 2024 Shree Kutchi Bhanushali Seva Samaj Trust. All rights reserved.' 
-              : '© 2024 શ્રી કચ્છી ભાનુશાલી સેવા સમાજ ટ્રસ્ટ. બધા અધિકારો સુરક્ષિત છે.'}
+              ? '© 2024 Shree Navi Mumbai Bhanushali Charitable Trust. All rights reserved.' 
+              : '© 2024 શ્રી નવી મુંબઈ ભાનુશાલી ચેરિટેબલ ટ્રસ્ટ. બધા અધિકારો સુરક્ષિત છે.'}
           </p>
         </div>
       </div>

@@ -9,7 +9,7 @@ import Layout from '@/components/layout/Layout';
 
 const Index = () => {
   const [currentLanguage, setCurrentLanguage] = useState<'en' | 'gu'>('en');
-  const [logoUrl] = useState('/lovable-uploads/347389d3-9857-45e7-aa9f-69745bff874d.png');
+  const [logoUrl] = useState('/lovable-uploads/26a16dd6-1e03-47e9-b43a-787d5ef976e7.png');
 
   const featureCards = [
     { 
