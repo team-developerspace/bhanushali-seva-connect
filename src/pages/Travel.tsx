@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from '@/components/layout/Layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -8,9 +8,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Bus, Train } from 'lucide-react';
 import Advertisement from '@/components/Advertisement';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Travel = () => {
-  const [currentLanguage, setCurrentLanguage] = useState<'en' | 'gu'>('en');
+  const { currentLanguage } = useLanguage();
 
   return (
     <Layout>

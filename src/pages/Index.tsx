@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,10 +6,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Advertisement from '@/components/Advertisement';
 import { User, Users, Bus, Calendar, FileText, Hospital, ShoppingBag, CalendarHeart } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Index = () => {
-  const [currentLanguage, setCurrentLanguage] = useState<'en' | 'gu'>('en');
-  const [logoUrl] = useState('/lovable-uploads/26a16dd6-1e03-47e9-b43a-787d5ef976e7.png');
+  const { currentLanguage } = useLanguage();
+  const logoUrl = '/lovable-uploads/26a16dd6-1e03-47e9-b43a-787d5ef976e7.png';
 
   const featureCards = [
     { 
@@ -115,7 +116,6 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
       <section className="bg-gradient-to-r from-bhanushali-orange to-bhanushali-yellow rounded-lg shadow-lg overflow-hidden mb-12">
         <div className="container mx-auto py-16 px-6 flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 text-white">
@@ -159,12 +159,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Banner Ad */}
       <div className="mb-12">
         <Advertisement position="banner" currentLanguage={currentLanguage} />
       </div>
 
-      {/* Features Section */}
       <section className="mb-12">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-bhanushali-orange mb-2">
@@ -201,12 +199,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Inline Ad */}
       <div className="mb-12">
         <Advertisement position="inline" currentLanguage={currentLanguage} />
       </div>
 
-      {/* News & Events */}
       <section className="mb-12">
         <Tabs defaultValue="events">
           <div className="flex justify-between items-center mb-6">
@@ -297,7 +293,6 @@ const Index = () => {
         </Tabs>
       </section>
 
-      {/* CTA Section */}
       <section className="bg-bhanushali-lightYellow rounded-lg p-8 text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-bhanushali-orange">
           {currentLanguage === 'en' 
@@ -323,7 +318,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Sponsors */}
       <section className="mb-12">
         <h2 className="text-2xl font-bold text-center text-bhanushali-orange mb-6">
           {currentLanguage === 'en' ? 'Our Sponsors' : 'અમારા પ્રાયોજકો'}
