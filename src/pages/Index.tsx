@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -10,8 +10,6 @@ import Layout from '@/components/layout/Layout';
 const Index = () => {
   const [currentLanguage, setCurrentLanguage] = useState<'en' | 'gu'>('en');
   const [logoUrl] = useState('/lovable-uploads/347389d3-9857-45e7-aa9f-69745bff874d.png');
-
-  // Remove the useEffect for logo processing since we want to keep the original logo
 
   const featureCards = [
     { 
@@ -77,7 +75,7 @@ const Index = () => {
     {
       id: 2,
       titleEn: 'Youth Career Workshop',
-      titleGu: 'યુવા કારકિર્દી કાર્યશાળા',
+      titleGu: 'યુવા કા��કિર્દી કાર્યશાળા',
       dateEn: 'June 8, 2024',
       dateGu: '8 જૂન, 2024',
       locationEn: 'Knowledge Center',
@@ -141,7 +139,7 @@ const Index = () => {
                 asChild 
                 size="lg" 
                 variant="outline" 
-                className="border-white text-white hover:bg-white/20"
+                className="border-white text-black hover:bg-white/20"
               >
                 <Link to="/donate">
                   {currentLanguage === 'en' ? 'Donate Now' : 'હવે દાન કરો'}
