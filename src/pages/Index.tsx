@@ -9,23 +9,9 @@ import Layout from '@/components/layout/Layout';
 
 const Index = () => {
   const [currentLanguage, setCurrentLanguage] = useState<'en' | 'gu'>('en');
-  const [logoUrl] = useState('/lovable-uploads/ee52775c-946f-4d30-a707-d59f099fa99b.png');
+  const [logoUrl] = useState('/lovable-uploads/347389d3-9857-45e7-aa9f-69745bff874d.png');
 
-  useEffect(() => {
-    const processLogo = async () => {
-      try {
-        const response = await fetch(logoUrl);
-        const blob = await response.blob();
-        const image = await loadImage(blob);
-        const processedLogoBlob = await removeBackground(image);
-        setLogoUrl(URL.createObjectURL(processedLogoBlob));
-      } catch (error) {
-        console.error('Error processing logo:', error);
-      }
-    };
-
-    processLogo();
-  }, []);
+  // Remove the useEffect for logo processing since we want to keep the original logo
 
   const featureCards = [
     { 
@@ -95,7 +81,7 @@ const Index = () => {
       dateEn: 'June 8, 2024',
       dateGu: '8 જૂન, 2024',
       locationEn: 'Knowledge Center',
-      locationGu: 'નોલેજ ��ેન્ટર',
+      locationGu: 'નોલેજ સેન્ટર',
     },
     {
       id: 3,
@@ -137,8 +123,8 @@ const Index = () => {
           <div className="md:w-1/2 text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               {currentLanguage === 'en' 
-                ? 'Welcome to Shree Kutchi Bhanushali Seva Samaj Trust' 
-                : 'શ્રી કચ્છી ભાનુશાલી સેવા સમાજ ટ્રસ્ટમાં આપનું સ્વાગત છે'}
+                ? 'Welcome to Shree Navi Mumbai Bhanushali Charitable Trust' 
+                : 'શ્રી નવી મુંબઈ ભાનુશાલી ચેરિટેબલ ટ્રસ્ટમાં આપનું સ્વાગત છે'}
             </h1>
             <p className="text-lg mb-6">
               {currentLanguage === 'en' 
@@ -167,7 +153,7 @@ const Index = () => {
             <div className="bg-white rounded-full w-64 h-64 flex items-center justify-center p-6">
               <img 
                 src={logoUrl} 
-                alt="Shree Kutchi Bhanushali Seva Samaj Trust Logo" 
+                alt="Shree Navi Mumbai Bhanushali Charitable Trust Logo" 
                 className="w-full h-full object-contain"
               />
             </div>

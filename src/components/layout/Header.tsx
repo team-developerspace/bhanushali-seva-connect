@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { LanguageToggle } from '@/components/LanguageToggle';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Globe, User } from 'lucide-react';
+import { Menu } from 'lucide-react';
 
 interface HeaderProps {
   currentLanguage: 'en' | 'gu';
@@ -12,16 +11,16 @@ interface HeaderProps {
 }
 
 const Header = ({ currentLanguage, setLanguage }: HeaderProps) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b shadow-sm">
       <div className="container mx-auto flex items-center justify-between p-4">
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center gap-2">
-            <img src="/lovable-uploads/ee52775c-946f-4d30-a707-d59f099fa99b.png" alt="Logo" className="h-12" />
+            <img src="/lovable-uploads/347389d3-9857-45e7-aa9f-69745bff874d.png" alt="Logo" className="h-12" />
             <h1 className="font-bold text-lg hidden md:block">
-              {currentLanguage === 'en' ? 'Shree Kutchi Bhanushali Seva Samaj Trust' : 'શ્રી કચ્છી ભાનુશાલી સેવા સમાજ ટ્રસ્ટ'}
+              {currentLanguage === 'en' ? 'Shree Navi Mumbai Bhanushali Charitable Trust' : 'શ્રી નવી મુંબઈ ભાનુશાલી ચેરિટેબલ ટ્રસ્ટ'}
             </h1>
           </Link>
         </div>
